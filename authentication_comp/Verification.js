@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { View, TextInput, Button } from 'react-native';
+import styles from '../styles/styles';
 
 export default function Verification({ navigation }) {
   const [verificationCode, setVerificationCode] = useState('');
@@ -10,7 +11,7 @@ export default function Verification({ navigation }) {
   };
 
   return (
-    <View>
+    <View style={styles.container}>
       <TextInput
         placeholder="Código de verificación"
         onChangeText={(text) => setVerificationCode(text)}

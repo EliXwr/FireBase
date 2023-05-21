@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { View, TextInput, Button } from 'react-native';
 import { Picker } from '@react-native-picker/picker';
+import styles from '../styles/styles';
 
 export default function PhoneNumber({ navigation }) {
   const [countryCode, setCountryCode] = useState('1');
@@ -13,8 +14,11 @@ export default function PhoneNumber({ navigation }) {
   };
 
   return (
-    <View>
+    <View style={styles.container}>
+      <View style={styles.inputContainer}>
+      <View style={styles.pickerContainer}>
       <Picker
+        style={styles.picker}
         selectedValue={countryCode}
         onValueChange={(itemValue) => setCountryCode(itemValue)}
       >
@@ -22,14 +26,19 @@ export default function PhoneNumber({ navigation }) {
         <Picker.Item label="Argentina (+54)" value="54" />
         {/* Agrega más códigos de país aquí */}
       </Picker>
+      </View>
 
       <TextInput
+        style={styles.input}
         placeholder="Número de teléfono"
+        placeholderTextColor="#657786" // color de placeholder más sutil
         onChangeText={(text) => setPhoneNumber(text)}
         value={phoneNumber}
       />
+      </View>
+      
 
-<Button title="Confirmar" onPress={confirmNumber} />
+      <Button title="Confirmar" onPress={confirmNumber} />
     </View>
   );
 }

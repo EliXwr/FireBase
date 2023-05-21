@@ -3,10 +3,10 @@
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-import TOS from './TOS';
-import PhoneNumber from './PhoneNumber';
-import Verification from './Verification'; 
-import Profile from './Profile';
+import TOS from './authentication_comp/TOS';
+import PhoneNumber from './authentication_comp/PhoneNumber';
+import Verification from './authentication_comp/Verification'; 
+import Profile from './authentication_comp/Profile';
 import Inbox from './Inbox';
 
 const Stack = createStackNavigator();

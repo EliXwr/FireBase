@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { View, TextInput, Button, Image } from 'react-native';
+import styles from '../styles/styles';
 
 export default function Profile({ navigation }) {
   const [name, setName] = useState('');
@@ -12,7 +13,7 @@ export default function Profile({ navigation }) {
   };
 
   return (
-    <View>
+    <View style={styles.container}>
       {profileImage ? (
         <Image source={{ uri: profileImage }} style={{ width: 100, height: 100 }} />
       ) : (
